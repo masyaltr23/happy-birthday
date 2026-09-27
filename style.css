@@ -1,15 +1,25 @@
 /* customizable snowflake styling */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .loader button {
-    width: 50%;
-    height: 100px;
+    width: min(320px, 70vw);
+    height: 90px;
     position: fixed;
     left: 50%;
     top: 45%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background: center no-repeat #fff;
     z-index: 9999999999999999999999;
-    font-size: 50px;
+    font-size: clamp(1.4rem, 3vw, 3rem);
     outline: none;
     box-sizing: border-box;
     border: none;
@@ -63,7 +73,10 @@ body {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
 }
 
 .balloon-border {
@@ -71,17 +84,21 @@ img {
     top: 100%;
     opacity: 0.5;
     z-index: 99999999;
+    max-width: 100%;
+    height: auto;
 }
 
 .area {
     text-align: center;
-    font-size: 70px;
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
     color: #C4515C;
-    letter-spacing: -7px;
+    letter-spacing: -0.08em;
     font-weight: 700;
     text-transform: uppercase;
     animation: spin 2s ease-out infinite;
     text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+    line-height: 1.2;
+    word-break: break-word;
 }
 
 #nae {
@@ -115,15 +132,59 @@ img {
 }
 
 .type-wrap {
-    font-size: 25px;
+    font-size: clamp(1rem, 2.8vw, 2rem);
     color: #C4515C;
-
+    line-height: 1.5;
+    word-break: break-word;
 }
 
 .cake {
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    padding-top: 250px;
+    width: min(260px, 55vw);
+    margin: 0 auto;
+    left: auto;
+    position: relative;
+    padding-top: 0;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.portrait {
+    width: min(340px, 70vw);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+    display: block;
+    margin: 0 auto;
+    transform: translateY(8px);
+    border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+    .portrait-col,
+    .cake {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .portrait {
+        width: min(220px, 65vw);
+        transform: translateY(0);
+    }
+
+    .cake {
+        width: min(180px, 48vw);
+    }
+
+    .type-wrap {
+        padding: 0 12px;
+    }
 }
