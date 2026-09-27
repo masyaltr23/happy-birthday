@@ -19,6 +19,7 @@ $('#play').click(function () {
         top: -500
     }, 8000);
     var audio = $('.song')[0];
+    audio.currentTime = 84;
     audio.play();
 
 });
